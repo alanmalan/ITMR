@@ -17,6 +17,7 @@ int main(int argc, char** argv) {
 	int codepointer = 0;
 	int pointer = 0;
 	int savd = 1;
+	srand(time(NULL));
 	egg(code); 
 	//fread (code, 1, 280, file);
 	while(1){
@@ -75,11 +76,7 @@ int main(int argc, char** argv) {
 				}
 				break;
 			case '%':
-				if (tape[pointer] > 127){
-					printf("Err number too big \n"); //i edited from num to number and it took 2 seconds to recompile, wtf windows
-				} else{
-					tape[pointer] = tape[pointer] * 2;
-				}
+				tape[pointer] = rand() % 256 ;
 				break;
 			case '$':
 				if(tape[pointer] < codemaxl){
